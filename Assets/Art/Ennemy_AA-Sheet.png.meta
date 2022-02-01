@@ -1,0 +1,752 @@
+fileFormatVersion: 2
+guid: 860f38c9c67d08a458d30fb096ca7528
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1940371953159527220
+    second: Ennemy_AA-Sheet_0
+  - first:
+      213: -1748620369228700284
+    second: Ennemy_AA-Sheet_1
+  - first:
+      213: -8130621229356163262
+    second: Ennemy_AA-Sheet_2
+  - first:
+      213: 5892630391351035876
+    second: Ennemy_AA-Sheet_3
+  - first:
+      213: -2382258037653738917
+    second: Ennemy_AA-Sheet_4
+  - first:
+      213: 1576051905696826526
+    second: Ennemy_AA-Sheet_5
+  - first:
+      213: -3958860437765001558
+    second: Ennemy_AA-Sheet_6
+  - first:
+      213: -5061211841153536684
+    second: Ennemy_AA-Sheet_7
+  - first:
+      213: 763618896445109669
+    second: Ennemy_AA-Sheet_8
+  - first:
+      213: 5636967457784211295
+    second: Ennemy_AA-Sheet_9
+  - first:
+      213: 4825610249685205235
+    second: Ennemy_AA-Sheet_10
+  - first:
+      213: 5245678951250489767
+    second: Ennemy_AA-Sheet_11
+  - first:
+      213: 6123891800157714887
+    second: Ennemy_AA-Sheet_12
+  - first:
+      213: -8908791522561156382
+    second: Ennemy_AA-Sheet_13
+  - first:
+      213: -8281680640110852727
+    second: Ennemy_AA-Sheet_14
+  - first:
+      213: -4939068010854270531
+    second: Ennemy_AA-Sheet_15
+  - first:
+      213: 2094010035639140822
+    second: Ennemy_AA-Sheet_16
+  - first:
+      213: 6253985358656714866
+    second: Ennemy_AA-Sheet_17
+  - first:
+      213: -2310683681759907180
+    second: Ennemy_AA-Sheet_18
+  - first:
+      213: 3914034399087037230
+    second: Ennemy_AA-Sheet_19
+  - first:
+      213: -3611815507750942405
+    second: Ennemy_AA-Sheet_20
+  - first:
+      213: 8479442589484833535
+    second: Ennemy_AA-Sheet_21
+  - first:
+      213: 2558310301905915869
+    second: Ennemy_AA-Sheet_22
+  - first:
+      213: 2339909973795762015
+    second: Ennemy_AA-Sheet_23
+  - first:
+      213: 7566250670857846698
+    second: Ennemy_AA-Sheet_24
+  - first:
+      213: 8310400173592982747
+    second: Ennemy_AA-Sheet_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4abc73df96215e0800000000000000
+      internalID: -1940371953159527220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 240
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4856c1de907abb7e0800000000000000
+      internalID: -1748620369228700284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 240
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fd9fcd11b3a2f80800000000000000
+      internalID: -8130621229356163262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 240
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e74625de14d6c150800000000000000
+      internalID: 5892630391351035876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 240
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a645ebfe480fed0800000000000000
+      internalID: -2382258037653738917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9403a2abd24fd510800000000000000
+      internalID: 1576051905696826526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 192
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae6ba3286d4f09c0800000000000000
+      internalID: -3958860437765001558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 192
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45dea0b55a6f2c9b0800000000000000
+      internalID: -5061211841153536684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 192
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5f26a275be89a00800000000000000
+      internalID: 763618896445109669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 192
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f572aa379088a3e40800000000000000
+      internalID: 5636967457784211295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f088f474f208f240800000000000000
+      internalID: 4825610249685205235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 144
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1770f96356cc840800000000000000
+      internalID: 5245678951250489767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 144
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9f35f752f6cf450800000000000000
+      internalID: 6123891800157714887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 144
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea1bbf9f4d9d5480800000000000000
+      internalID: -8908791522561156382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 144
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98586f6065f811d80800000000000000
+      internalID: -8281680640110852727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9398bffc7e47bb0800000000000000
+      internalID: -4939068010854270531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 96
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1cf5a680b6f0d10800000000000000
+      internalID: 2094010035639140822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 96
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2783a357c8e9ac650800000000000000
+      internalID: 6253985358656714866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 96
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492b8681f6dceefd0800000000000000
+      internalID: -2310683681759907180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 96
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b0e3c6c81715630800000000000000
+      internalID: 3914034399087037230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3902429ee040edc0800000000000000
+      internalID: -3611815507750942405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 48
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffadf8feb180da570800000000000000
+      internalID: 8479442589484833535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 48
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf03524aa1f08320800000000000000
+      internalID: 2558310301905915869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 48
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f6d7a49b7097020800000000000000
+      internalID: 2339909973795762015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 48
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaffa0eb5e8b00960800000000000000
+      internalID: 7566250670857846698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemy_AA-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4ba507de8745370800000000000000
+      internalID: 8310400173592982747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
