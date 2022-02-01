@@ -34,6 +34,9 @@ public class Player : Entity
     }
     public override void UpdateBehaviour()
     {
+        if (GM.I.mainMenuScreen.activeSelf)
+            return;
+
         currentInput = EntityInput.Get();
         SwapIfNecessary();
         base.UpdateBehaviour();
