@@ -86,7 +86,6 @@ public class Boss : Ennemy
         yield return new WaitForSeconds(3f);
         GM.I.gameObjects.SetActive(false);
         GM.I.winScreen.SetActive(true);
-
     }
 
     

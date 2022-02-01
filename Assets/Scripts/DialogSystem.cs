@@ -61,7 +61,13 @@ public class DialogSystem : MonoBehaviour
             yield return 0;
         }
         txt.text = line;
-        
+
+        if (lineIndex == lines.Count)
+        {
+            yield return new WaitForSeconds(3f);
+            GM.I.gameObjects.SetActive(false);
+            GM.I.winScreen.SetActive(true);
+        }
     }
 
     IEnumerator HideLine(){
