@@ -10,28 +10,34 @@ public class Boss : Ennemy
     public List<Claw> cables;
     public List<GameObject> phaseEnnemies;
     public Transform cameraTarget;
-    
-    private void OnEnable() {
+
+    private void OnEnable()
+    {
         StartCoroutine(BossRoutine());
     }
 
-    public override Bounds HitBox{
+    public override Bounds HitBox
+    {
         get
         {
-            if(currentBossState == BossState.Tired){
+            if (currentBossState == BossState.Tired)
+            {
                 return new Bounds(transform.position, new Vector3(hitboxSize.x, hitboxSize.y, 1));
-            }else{
+            }
+            else
+            {
                 return new Bounds(Vector3.up * 100f, new Vector3(hitboxSize.x, hitboxSize.y, 1));
             }
-            
+
         }
-    }    
+    }
 
     public override void UpdateBehaviour()
     {
     }
 
-    IEnumerator BossRoutine(){
+    IEnumerator BossRoutine()
+    {
         GM.I.audio.PlayBossMusic();
         GM.I.cam.SetTarget(cameraTarget);
         GM.I.goArrow.enabled = false;
@@ -43,7 +49,7 @@ public class Boss : Ennemy
         }
         for (int i = 0; i < 4; i++)
         {
-            
+
             currentBossState = BossState.Attacking;
             anim.SetAnimation(EntityState.Idle, true);
             foreach (Claw claw in cables)
@@ -60,9 +66,10 @@ public class Boss : Ennemy
             currentPhase.ennemies.Add(this);
             currentBossState = BossState.Tired;
             anim.SetAnimation(EntityState.Moving, true);
-            while (hp == 4-i)
+            while (hp == 4 - i)
             {
-                if(!currentPhase.active){
+                if (!currentPhase.active)
+                {
                     Destroy(currentPhase.transform.parent.gameObject);
                     currentPhase = GameObject.Instantiate(phaseEnnemies[i], transform.parent).GetComponentInChildren<EnnemyManager>();
                     currentPhase.Activate(false);
@@ -70,7 +77,7 @@ public class Boss : Ennemy
                 }
                 yield return 0;
             }
-            
+
             yield return new WaitForSeconds(0.2f);
         }
 
@@ -82,16 +89,11 @@ public class Boss : Ennemy
 
         yield return new WaitForSeconds(2f);
         GM.I.dialog.NextLine(true);
-
-        yield return new WaitForSeconds(3f);
-        GM.I.gameObjects.SetActive(false);
-        GM.I.winScreen.SetActive(true);
     }
-
-    
 }
 
-public enum BossState{
+public enum BossState
+{
     Idle,
     Attacking,
     Tired
