@@ -26,8 +26,9 @@ public class Entity : MonoBehaviour
     public float hitV, hurtV, deathV;
 
     public virtual Bounds HitBox => new Bounds(transform.position, new Vector3(hitboxSize.x, hitboxSize.y, 1));
-    public virtual Bounds AttackBounds(){
-        Vector3 boundsCenter = transform.position + ((isFacingRight? Vector3.right : Vector3.left) * attackWindow.x /2f);
+    public virtual Bounds AttackBounds()
+    {
+        Vector3 boundsCenter = transform.position + ((isFacingRight ? Vector3.right : Vector3.left) * attackWindow.x / 2f);
         return new Bounds(boundsCenter, new Vector3(attackWindow.x, attackWindow.y, 1f));
     }
 
@@ -36,16 +37,22 @@ public class Entity : MonoBehaviour
         anim.SetAnimation(state, forceRefresh);
         currentState = state;
     }
-    
-    private void Update() {
+
+    private void Update()
+    {
         UpdateBehaviour();
     }
-    public virtual void UpdateBehaviour(){
+
+    public virtual void UpdateBehaviour()
+    {
         UpdateStateFromInput(currentInput);
-        if(currentState == EntityState.Moving){
+        if (currentState == EntityState.Moving)
+        {
             isFacingRight = currentInput.direction.x > 0;
             movement.Move(currentInput.direction, walkSpeed);
-        }else if(currentState == EntityState.Hurt){
+        }
+        else if (currentState == EntityState.Hurt)
+        {
             movement.Move(knockBackDirection, knockBackSpeed);
         }
     }
@@ -55,50 +62,67 @@ public class Entity : MonoBehaviour
         switch (currentState)
         {
             case EntityState.Idle:
-                if(currentInput.pressedButton == ButtonPress.Attack){
+                if (currentInput.pressedButton == ButtonPress.Attack)
+                {
                     SetState(EntityState.Attacking);
-                }else if (currentInput.pressedButton == ButtonPress.ChangeState){
+                }
+                else if (currentInput.pressedButton == ButtonPress.ChangeState)
+                {
                     SetState(EntityState.Idle, true);
-                }else if (currentInput.pressedButton == ButtonPress.Taunt){
+                }
+                else if (currentInput.pressedButton == ButtonPress.Taunt)
+                {
                     Debug.Log("TAUNT IDLE");
                     SetState(EntityState.Taunting, true);
                 }
-                else if(currentInput.direction.sqrMagnitude > 0){
+                else if (currentInput.direction.sqrMagnitude > 0)
+                {
                     SetState(EntityState.Moving);
                 }
-            break;
+                break;
 
             case EntityState.Moving:
-                
-                if(currentInput.pressedButton == ButtonPress.Attack){
+
+                if (currentInput.pressedButton == ButtonPress.Attack)
+                {
                     SetState(EntityState.Attacking);
-                }else if (currentInput.pressedButton == ButtonPress.ChangeState){
+                }
+                else if (currentInput.pressedButton == ButtonPress.ChangeState)
+                {
                     SetState(EntityState.Moving, true);
-                }else if (currentInput.pressedButton == ButtonPress.Taunt){
+                }
+                else if (currentInput.pressedButton == ButtonPress.Taunt)
+                {
                     Debug.Log("TAUNT MOVE");
                     SetState(EntityState.Taunting, true);
                 }
-                else if(currentInput.direction.sqrMagnitude == 0){
+                else if (currentInput.direction.sqrMagnitude == 0)
+                {
                     SetState(EntityState.Idle);
                 }
-            break;
+                break;
         }
     }
 
-    public virtual void Hurt(Vector3 knockBackDir, int damage){
-        if(currentState == EntityState.Dead){return;}
+    public virtual void Hurt(Vector3 knockBackDir, int damage)
+    {
+        if (currentState == EntityState.Dead) { return; }
         hp -= damage;
         SetState(EntityState.Hurt);
         knockBackDirection = knockBackDir;
-        if(hp <= 0){
+        if (hp <= 0)
+        {
             SetState(EntityState.Dead);
             GM.I.audio.PlaySFX(death, transform.position);
-        }else{
+        }
+        else
+        {
             GM.I.audio.PlaySFX(hurt, transform.position);
         }
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
         Bounds attackBound = AttackBounds();
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackBound.center, attackBound.size);
@@ -107,7 +131,8 @@ public class Entity : MonoBehaviour
     }
 }
 
-public enum EntityState{
+public enum EntityState
+{
     Idle,
     Moving,
     Taunting,

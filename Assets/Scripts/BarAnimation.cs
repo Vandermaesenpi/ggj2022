@@ -6,16 +6,16 @@ public class BarAnimation : EntityAnimations
 {
     void Awake()
     {
-        
+
     }
-    
+
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 }

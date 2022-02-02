@@ -19,17 +19,21 @@ public class EntityAnimations : AnimationPlayer
     public List<Sprite> hurtAnimation;
     public List<Sprite> deathAnimation;
 
-
-    private void Update() {
-        if(lockedFlip == LockedFlip.None){
+    private void Update()
+    {
+        if (lockedFlip == LockedFlip.None)
+        {
             rend.flipX = !myEntity.isFacingRight;
-        }else{
+        }
+        else
+        {
             rend.flipX = lockedFlip == LockedFlip.Left;
         }
     }
 
-    public void SetAnimation(EntityState state, bool forceRefresh){
-        if(state == myEntity.currentState && !forceRefresh){return;}
+    public void SetAnimation(EntityState state, bool forceRefresh)
+    {
+        if (state == myEntity.currentState && !forceRefresh) { return; }
         foreach (EntityAnimations linkedAnim in linkedAnimations)
         {
             linkedAnim.SetAnimation(state, forceRefresh);
@@ -38,37 +42,43 @@ public class EntityAnimations : AnimationPlayer
         {
             case EntityState.Idle:
                 PlayAnimation(idleAnimation, true);
-            break;
+                break;
             case EntityState.Moving:
                 PlayAnimation(moveAnimation, true);
-            break;
+                break;
             case EntityState.Taunting:
                 PlayAnimation(tauntAnimation, false, AIAttack);
-            break;
+                break;
             case EntityState.Attacking:
-                if(myEntity.isPlayer && ((Player)myEntity).isOffense && ((Player)myEntity).charge == 0){
+                if (myEntity.isPlayer && ((Player)myEntity).isOffense && ((Player)myEntity).charge == 0)
+                {
                     PlayAnimation(attackEmpty, false, ResetState);
                     GM.I.audio.PlaySFX(((Player)myEntity).empty, transform.position, ((Player)myEntity).emptyV);
-                }else{
+                }
+                else
+                {
                     PlayAnimation(attackAnimation, false, ResetState);
-                    if(myEntity.isPlayer && !((Player)myEntity).isOffense){
+                    if (myEntity.isPlayer && !((Player)myEntity).isOffense)
+                    {
                         GM.I.audio.PlaySFX(((Player)myEntity).crowd, transform.position, ((Player)myEntity).crowdV);
-                    }else{
+                    }
+                    else
+                    {
                         GM.I.audio.PlaySFX(myEntity.hit, transform.position, myEntity.hitV);
                     }
                 }
-            break;
+                break;
             case EntityState.Hurt:
                 PlayAnimation(hurtAnimation, false, ResetState);
-            break;
+                break;
             case EntityState.Dead:
                 PlayAnimation(deathAnimation, false, DestroyEntity);
                 foreach (EntityAnimations linkedAnim in linkedAnimations)
                 {
                     linkedAnim.gameObject.SetActive(false);
                 }
-            break;
-            
+                break;
+
         }
     }
 
@@ -77,39 +87,46 @@ public class EntityAnimations : AnimationPlayer
         StartCoroutine(DestroyRoutine());
     }
 
-    IEnumerator DestroyRoutine(){
+    IEnumerator DestroyRoutine()
+    {
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < 10; i++)
         {
             rend.enabled = !rend.enabled;
             yield return new WaitForSeconds(0.1f);
         }
-        if(myEntity.isPlayer){
+        if (myEntity.isPlayer)
+        {
             yield return new WaitForSeconds(1f);
             GM.I.GameOver();
         }
         myEntity.gameObject.SetActive(false);
     }
 
-    void ResetState(){
-        if(isMaster)
-            myEntity.SetState(EntityState.Idle);    
-    }  
+    void ResetState()
+    {
+        if (isMaster)
+            myEntity.SetState(EntityState.Idle);
+    }
 
-    void AIAttack(){
+    void AIAttack()
+    {
         SetState(EntityState.Attacking);
-        if(myEntity.AttackBounds().Intersects(GM.I.player.HitBox)){
+        if (myEntity.AttackBounds().Intersects(GM.I.player.HitBox))
+        {
             GM.I.player.Hurt((GM.I.player.transform.position - transform.position).normalized, 1);
         }
-    } 
+    }
 
-    void SetState(EntityState state){
-        if(isMaster)
-            myEntity.SetState(state);    
-    }    
+    void SetState(EntityState state)
+    {
+        if (isMaster)
+            myEntity.SetState(state);
+    }
 }
 
-public enum LockedFlip{
+public enum LockedFlip
+{
     None,
     Left,
     Right
