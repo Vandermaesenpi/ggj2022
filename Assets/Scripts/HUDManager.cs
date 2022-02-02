@@ -9,10 +9,11 @@ public class HUDManager : MonoBehaviour
 
     public SpriteRenderer healthBar, chargeBar, alert;
 
-    private void Update() {
+    private void Update()
+    {
         int hp = Mathf.Max(0, GM.I.player.hp);
-        healthBar.sprite = healthSprites[20-hp];
-        chargeBar.sprite = chargeSprites[10-GM.I.player.charge];
+        healthBar.sprite = healthSprites[20 - hp];
+        chargeBar.sprite = chargeSprites[10 - GM.I.player.charge];
         alert.enabled = GM.I.player.charge == 10;
     }
 }

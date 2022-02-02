@@ -8,9 +8,9 @@ public class DialogSystem : MonoBehaviour
     public int lineIndex = 0;
     public AudioClip voiceBeep;
     public AnimationCurve translateCurve;
+
     [TextArea]
     public List<string> lines;
-
 
     float downY = -1.859f;
     float upY = -1.5f;
@@ -18,28 +18,33 @@ public class DialogSystem : MonoBehaviour
 
     Coroutine lineRoutine;
 
-    public void Hide(){
-        if(lineRoutine != null){StopCoroutine(lineRoutine);}
+    public void Hide()
+    {
+        if (lineRoutine != null) { StopCoroutine(lineRoutine); }
         lineRoutine = StartCoroutine(HideLine());
     }
 
-    private void Start() {
+    private void Start()
+    {
         NextLine(true);
     }
 
-    public void NextLine(bool translate){
-        if(lineRoutine != null){StopCoroutine(lineRoutine);}
+    public void NextLine(bool translate)
+    {
+        if (lineRoutine != null) { StopCoroutine(lineRoutine); }
         lineRoutine = StartCoroutine(ShowLine(translate));
     }
 
-    IEnumerator ShowLine(bool translate){
+    IEnumerator ShowLine(bool translate)
+    {
         txt.text = "";
         string line = lines[lineIndex];
         lineIndex++;
         float t = 0f;
         Vector3 upPos = new Vector3(X, upY, 0);
         Vector3 downPos = new Vector3(X, downY, 0);
-        if(translate){
+        if (translate)
+        {
             while (t < 1f)
             {
                 transform.localPosition = Vector3.Lerp(upPos, downPos, translateCurve.Evaluate(t));
@@ -61,10 +66,17 @@ public class DialogSystem : MonoBehaviour
             yield return 0;
         }
         txt.text = line;
-        
+
+        if (lineIndex == lines.Count)
+        {
+            yield return new WaitForSeconds(3f);
+            GM.I.gameObjects.SetActive(false);
+            GM.I.winScreen.SetActive(true);
+        }
     }
 
-    IEnumerator HideLine(){
+    IEnumerator HideLine()
+    {
         txt.text = "";
         float t = 0f;
         Vector3 upPos = new Vector3(X, upY, 0);
@@ -77,6 +89,4 @@ public class DialogSystem : MonoBehaviour
         }
         transform.localPosition = upPos;
     }
-
-
 }

@@ -11,12 +11,16 @@ public class EnnemyManager : MonoBehaviour
     public bool active = false;
     public bool bossPhase = false;
 
-    private void Awake() {
+    private void Awake()
+    {
         ennemies = GetComponentsInChildren<Ennemy>(true).ToList();
     }
-    public void Activate(bool cam = true){
+
+    public void Activate(bool cam = true)
+    {
         GM.I.currentEnnemyManager = this;
-        if(cam){
+        if (cam)
+        {
             GM.I.cam.SetTarget(cameraTarget);
         }
         foreach (Ennemy ennemy in ennemies)
@@ -27,17 +31,20 @@ public class EnnemyManager : MonoBehaviour
         active = true;
     }
 
-    private void Update() {
-        if(!active){return;}
+    private void Update()
+    {
+        if (!active) { return; }
         bool allDead = true;
         foreach (Ennemy ennemy in ennemies)
         {
-            if(ennemy.currentState != EntityState.Dead && !ennemy.isBoss){
+            if (ennemy.currentState != EntityState.Dead && !ennemy.isBoss)
+            {
                 allDead = false;
             }
         }
 
-        if(allDead){
+        if (allDead)
+        {
             GoToNext();
         }
     }
@@ -45,7 +52,8 @@ public class EnnemyManager : MonoBehaviour
     private void GoToNext()
     {
         active = false;
-        if(!bossPhase){
+        if (!bossPhase)
+        {
             GM.I.goArrow.enabled = true;
             GM.I.cam.FocusPlayer();
         }

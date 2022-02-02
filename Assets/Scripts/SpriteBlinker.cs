@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpriteBlinker : AnimationPlayer
 {
     public List<Sprite> sprites;
-    private void Start() {
+
+    private void Start()
+    {
         PlayAnimation(sprites, true);
     }
 }

@@ -7,7 +7,8 @@ public class SpriteButton : MonoBehaviour
 {
     public UnityEvent onClick;
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         onClick?.Invoke();
     }
 }

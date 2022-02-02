@@ -14,18 +14,20 @@ public class Claw : Entity
     Vector3 patrolTarget;
 
     public EnnemyMovementState currentMovementState;
+
     public override void UpdateBehaviour()
     {
         UpdateState();
         base.UpdateBehaviour();
     }
 
-    public override Bounds HitBox{
+    public override Bounds HitBox
+    {
         get
         {
             return new Bounds(Vector3.up * 100f, new Vector3(hitboxSize.x, hitboxSize.y, 1));
         }
-    } 
+    }
 
     public override Bounds AttackBounds()
     {
@@ -33,7 +35,8 @@ public class Claw : Entity
         return new Bounds(boundsCenter, new Vector3(attackWindow.x, attackWindow.y, 1f));
     }
 
-    void UpdateState(){
+    void UpdateState()
+    {
         float playerDistance = Vector3.Distance(transform.position, GM.I.player.transform.position);
         currentInput = new EntityInput(Vector2.zero, ButtonPress.None);
         TryPatrol();
@@ -41,36 +44,45 @@ public class Claw : Entity
 
     private void TryPatrol()
     {
-        if(currentState == EntityState.Attacking || currentState == EntityState.Dead || currentState == EntityState.Taunting 
-        || currentState == EntityState.Hurt){
+        if (currentState == EntityState.Attacking || currentState == EntityState.Dead || currentState == EntityState.Taunting
+        || currentState == EntityState.Hurt)
+        {
             return;
         }
 
         anim.lockedFlip = LockedFlip.None;
-        
-        bool changedState = currentMovementState != EnnemyMovementState.Patrolling; 
+
+        bool changedState = currentMovementState != EnnemyMovementState.Patrolling;
         currentMovementState = EnnemyMovementState.Patrolling;
         // Si pas de point ou point visé atteint?
-        if (changedState){
-            patrolTarget = GM.RandomPointInBounds(GM.I.cam.CamBounds()); 
-        }if(Vector3.Distance(patrolTarget, transform.position) < 0.01f){
-            if(!patrolWaiting){
+        if (changedState)
+        {
+            patrolTarget = GM.RandomPointInBounds(GM.I.cam.CamBounds());
+        }
+        if (Vector3.Distance(patrolTarget, transform.position) < 0.01f)
+        {
+            if (!patrolWaiting)
+            {
                 waitCounter = patrolIdleTime;
                 patrolWaiting = true;
                 TryAttack();
                 return;
-            }else{
+            }
+            else
+            {
                 waitCounter -= Time.deltaTime;
-                if(waitCounter <= 0){
+                if (waitCounter <= 0)
+                {
                     patrolWaiting = false;
                     currentMovementState = EnnemyMovementState.Idle;
                 }
             }
         }
-        Vector3 target = active? patrolTarget : GM.I.cam.transform.position + Vector3.left * 4f;
+        Vector3 target = active ? patrolTarget : GM.I.cam.transform.position + Vector3.left * 4f;
         Vector3 dir = (target - transform.position).normalized;
         //Bouger vers point
-        if(patrolWaiting){
+        if (patrolWaiting)
+        {
             dir = Vector3.zero;
         }
         currentInput = new EntityInput(dir, ButtonPress.None);
@@ -78,8 +90,9 @@ public class Claw : Entity
 
     private void TryAttack()
     {
-        if(currentState == EntityState.Attacking || currentState == EntityState.Dead 
-        || currentState == EntityState.Hurt || currentState == EntityState.Taunting){
+        if (currentState == EntityState.Attacking || currentState == EntityState.Dead
+        || currentState == EntityState.Hurt || currentState == EntityState.Taunting)
+        {
             return;
         }
         GM.I.audio.PlaySFX(hurt, transform.position);
@@ -89,6 +102,4 @@ public class Claw : Entity
         currentInput = new EntityInput(Vector3.zero, ButtonPress.Taunt);
         patrolWaiting = false;
     }
-
-    
 }

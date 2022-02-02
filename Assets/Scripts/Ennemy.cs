@@ -20,23 +20,26 @@ public class Ennemy : Entity
         base.UpdateBehaviour();
     }
 
-    
-
-    void UpdateState(){
+    void UpdateState()
+    {
         float playerDistance = Vector3.Distance(transform.position, GM.I.player.transform.position);
         bool seePlayer = playerDistance < seeingDistance;
         Bounds attackBound = AttackBounds();
         bool canAttack = attackBound.Contains(GM.I.player.transform.position);
-        if(GM.I.player.currentState == EntityState.Dead){
+        if (GM.I.player.currentState == EntityState.Dead)
+        {
             TryPatrol();
         }
-        else if(canAttack){
+        else if (canAttack)
+        {
             TryAttack();
         }
-        else if (seePlayer){
+        else if (seePlayer)
+        {
             TryChase();
         }
-        else{
+        else
+        {
             TryPatrol();
         }
 
@@ -44,25 +47,33 @@ public class Ennemy : Entity
 
     private void TryPatrol()
     {
-        if(currentState == EntityState.Attacking || currentState == EntityState.Dead || currentState == EntityState.Taunting 
-        || currentState == EntityState.Hurt){
+        if (currentState == EntityState.Attacking || currentState == EntityState.Dead || currentState == EntityState.Taunting
+        || currentState == EntityState.Hurt)
+        {
             return;
         }
 
         anim.lockedFlip = LockedFlip.None;
-        
-        bool changedState = currentMovementState != EnnemyMovementState.Patrolling; 
+
+        bool changedState = currentMovementState != EnnemyMovementState.Patrolling;
         currentMovementState = EnnemyMovementState.Patrolling;
         // Si pas de point ou point visé atteint?
-        if (changedState){
-            patrolTarget = GM.RandomPointInBounds(GM.I.cam.CamBounds()); 
-        }if(Vector3.Distance(patrolTarget, transform.position) < 0.01f){
-            if(!patrolWaiting){
+        if (changedState)
+        {
+            patrolTarget = GM.RandomPointInBounds(GM.I.cam.CamBounds());
+        }
+        if (Vector3.Distance(patrolTarget, transform.position) < 0.01f)
+        {
+            if (!patrolWaiting)
+            {
                 waitCounter = patrolIdleTime;
                 patrolWaiting = true;
-            }else{
+            }
+            else
+            {
                 waitCounter -= Time.deltaTime;
-                if(waitCounter <= 0){
+                if (waitCounter <= 0)
+                {
                     patrolWaiting = false;
                     currentMovementState = EnnemyMovementState.Idle;
                 }
@@ -70,7 +81,8 @@ public class Ennemy : Entity
         }
         Vector3 dir = (patrolTarget - transform.position).normalized;
         //Bouger vers point
-        if(patrolWaiting){
+        if (patrolWaiting)
+        {
             dir = Vector3.zero;
         }
         currentInput = new EntityInput(dir, ButtonPress.None);
@@ -78,12 +90,13 @@ public class Ennemy : Entity
 
     private void TryChase()
     {
-        if(currentState == EntityState.Attacking || currentState == EntityState.Dead 
-        || currentState == EntityState.Taunting || currentState == EntityState.Hurt){
+        if (currentState == EntityState.Attacking || currentState == EntityState.Dead
+        || currentState == EntityState.Taunting || currentState == EntityState.Hurt)
+        {
             return;
         }
         currentMovementState = EnnemyMovementState.Chasing;
-        
+
         Vector3 targetPoint = GM.I.player.transform.position;
         float sens = Mathf.Sign(targetPoint.x - transform.position.x);
         targetPoint += Vector3.left * sens * 0.2f;
@@ -96,19 +109,19 @@ public class Ennemy : Entity
 
     private void TryAttack()
     {
-        if(currentState == EntityState.Attacking || currentState == EntityState.Dead 
-        || currentState == EntityState.Hurt || currentState == EntityState.Taunting){
+        if (currentState == EntityState.Attacking || currentState == EntityState.Dead
+        || currentState == EntityState.Hurt || currentState == EntityState.Taunting)
+        {
             return;
         }
         currentMovementState = EnnemyMovementState.Idle;
         currentInput = new EntityInput(Vector3.zero, ButtonPress.Taunt);
         patrolWaiting = false;
     }
-
-    
 }
 
-public enum EnnemyMovementState{
+public enum EnnemyMovementState
+{
     Idle,
     Patrolling,
     Chasing,

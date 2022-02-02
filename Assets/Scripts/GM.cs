@@ -9,11 +9,12 @@ public class GM : MonoBehaviour
     public static GM _instance;
     public static GM I
     {
-        get {
+        get
+        {
             if (_instance == null)
             {
                 _instance = GameObject.FindObjectOfType<GM>();
-                
+
                 if (_instance == null)
                 {
                     GameObject container = new GameObject("Bicycle");
@@ -37,9 +38,8 @@ public class GM : MonoBehaviour
     public Vector2 gameBounds;
     public float boundAngle;
 
-
-
-    public static Vector3 RandomPointInBounds(Bounds bounds) {
+    public static Vector3 RandomPointInBounds(Bounds bounds)
+    {
         return new Vector3(
             Random.Range(bounds.min.x, bounds.max.x),
             Random.Range(bounds.min.y, bounds.max.y),
@@ -49,14 +49,16 @@ public class GM : MonoBehaviour
 
     public void Restart() => SceneManager.LoadScene(0);
 
-    public void StartGame(){
+    public void StartGame()
+    {
         mainMenuScreen.SetActive(false);
         gameObjects.SetActive(true);
         audio.PlayGameMusic();
         dialog.enabled = true;
     }
 
-    public void GameOver(){
+    public void GameOver()
+    {
         gameObjects.SetActive(false);
         gameOverScreen.SetActive(true);
     }
